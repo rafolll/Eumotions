@@ -1,0 +1,536 @@
+/***********ESTILOS DE GOOGLE FONTS: POPPINS***********/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+/*//////////////////////////////////////
+/////////////////HEADER//////////////////
+///////////////////////////////////////*/
+
+/*************RESETEANDO EL CSS************************/
+*,
+*::before,
+*::after {
+  margin: 0; /****MARGEN 0****/
+  padding: 0; /***RELLENO 0**/
+  box-sizing: inherit;
+}
+
+/************************ESTILOS PARA BODY*****************************************/
+body {
+  font-family: "Poppins"; /***FUENTE POPPINS EN  TODA EL BODY***/
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/*Globales*/
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/************************ESTILOS PARA HEADER***************************************/
+header {
+  position: relative;
+  top: 0; /**PARA MANTENER LA POSICIÓN ARRIBA**/
+  left: 0; /**PARA MANTENER LA POSICIÓN A LA IZQUIERDA**/
+  right: 0; /**PARA MANTENER LA POSICIÓN A LA DERECHA**/
+  background-color: rgba(11, 166, 142, 0.6);
+  padding: 0px 10%; /**0px ARRIBA Y ABAJO Y 10% IZQ-DERECHA**/
+  display: flex; /****COLOCAR UN ELEMENTO A LADO DE OTRO*****/
+  align-items: center; /********CENTRAR LOS ELEMENTOS*******/
+  justify-content: space-between; /**SEPARAR LOS ELEMENTOS EN EL INTERIOR**/
+  z-index: 1000; /**POSICIONAR EL MENU DELANTE DE CUALQUIER ELEMENTO**/
+}
+
+.header .navigation ul li {
+  float: left; /**LOS ELEMENTOS FLOTAN ALA IZQUIERDA DE SU CONENEDOR**/
+  position: relative;
+}
+
+.header .navigation ul li a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none; /**QUITA EL SUBRAYADO DE LOS MENUS**/
+  padding: 20px;
+  display: block;
+  transition: all 0.2s ease; /**ANIMACIÓN DE TRANSICIÓN DE 2 SG**/
+}
+
+.header .navigation ul li ul {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  background-color: rgba(11, 166, 142, 0.6);
+  display: none; /**NO DESPLEGAR LA BARRA DE MENU**/
+}
+
+.header .navigation ul li ul li a {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul {
+  position: absolute;
+  top: 0;
+  right: 300px;
+}
+
+.header .navigation ul li ul li {
+  width: 100%;
+}
+
+.header .navigation ul li:hover > ul {
+  display: initial;
+}
+
+#toggle,
+.header label {
+  display: none;
+  cursor: pointer;
+}
+
+.header .navigation ul li a:hover {
+  background-color: #00425a; /**DAR FONDO DE COLOR CADA VEZ QUE EL MOUSE LO SELECCIONE**/
+}
+
+/************************ESTILOS PARA EL MENU TOGGLE***************************************/
+.menu {
+  width: 45px;
+  height: 35px;
+}
+
+/************************ESTILOS PARA EL LOGO***************************************/
+.logo img {
+  margin-top: 5px;
+  height: 68px;
+  border-radius: 10%;
+}
+
+/************************ESTILOS PARA LA BARRA DE NAVEGACIÓN************************/
+.navigation ul {
+  list-style: none; /***QUITA LAS VIÑETAS DE LAS LISTAS***/
+}
+
+/*****************************MEDIA QUERY PARA RESPONSIVE***************************/
+@media (max-width: 1000px) {
+  .header label {
+    display: initial;
+  }
+
+  .header {
+    padding: 20px 10%;
+  }
+
+  .header .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(11, 166, 142, 0.6);
+    display: none;
+  }
+
+  .header .navigation ul li {
+    width: 100%;
+  }
+
+  .header .navigation ul li a {
+    padding: 8px 30px 8px 10%;
+  }
+
+  .header .navigation ul li ul {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+
+  .header .navigation ul li ul li {
+    background-color: rgba(11, 166, 142, 0.6);
+  }
+
+  .header .navigation ul li ul li ul {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+  #toggle:checked ~ .navigation {
+    display: block;
+  }
+}
+
+/*///////////////////////////////////////////
+//////////////////SLIDER////////////////////////
+/////////////////////////////////////////////*/
+
+.container-slider {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 720px;
+  margin-left: -100%;
+}
+
+.slider__section {
+  flex: 0 0 100%;
+}
+
+.slider__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 07);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider__btn:hover {
+  background: #ffff;
+}
+
+.slider__btn--left {
+  left: 10px;
+}
+
+.slider__btn--right {
+  right: 10px;
+}
+
+/************************ESTILOS PARA TARJETAS**************************************/
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: center;
+  min-height: 10vh; /**ALTURA MÍNIMA DE 100 **/
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+}
+
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .front h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.card .back {
+  transform: perspective(600px) rotateY(180deg);
+  background: rgb(3, 35, 54);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+  line-height: 50px;
+}
+
+.card .back .link a {
+  color: #f3f3f3;
+}
+
+.card .back h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.card .back p {
+  letter-spacing: 1px;
+}
+/**ANIMACIÓN SE REALIZE CADA VEZ QUE EL MOUSE PASE POR LA TARJETA**/
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+/*/////////////////////////////////////////////////////
+/////////////////////SECTION////////////////////////////
+//////////////////////////////////////////////////////*/
+
+section p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 35px;
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  color: #3b906c;
+}
+
+/*/////////////////////////////////////////////////////
+/////////////////////CARRUSEL//////////////////////////
+//////////////////////////////////////////////////////*/
+
+.product {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background: #34e89e;
+  background: -webkit-linear-gradient(to right, #0f3443, #34e89e);
+  background: linear-gradient(to right, #0f3443, #34e89e);
+}
+
+.product-category {
+  padding: 0 10vw;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.product-container {
+  padding: 0 10vw;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  height: 500px;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 450px;
+  margin-right: 40px;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.product-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 90%;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.product-card:hover .card-btn {
+  opacity: 1;
+}
+
+.card-btn a:hover {
+  background: #3b906c;
+  color: #fff;
+}
+
+.product-info {
+  width: 100%;
+  height: 100px;
+  padding-top: 10px;
+}
+
+.product-brand {
+  text-transform: uppercase;
+  color: white;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.price {
+  font-weight: 900;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+}
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 10vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  cursor: pointer;
+  z-index: 8;
+}
+
+.pre-btn {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.nxt-btn {
+  right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+  opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+
+.collection-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.collection {
+  position: relative;
+}
+
+.collection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  text-transform: capitalize;
+}
+
+.collection:nth-child(3) {
+  grid-column: span 2;
+  margin-bottom: 10px;
+}
+
+/*///////////////////////////////////////////////////////////////////////
+////////////////////////////////////FOOTER///////////////////////////////
+///////////////////////////////////////////////////////////////////////*/
+
+footer {
+  padding: 1rem;
+  background-color: white;
+  color: #3b906c;
+  text-align: center;
+  position: relative;
+}
+
+.footer-content h4 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.social-icons {
+  list-style: none;
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.social-icons i {
+  font-size: 2rem;
+  color: #3b906c;
+  padding: 0.5rem;
+}
+
+.social-icons i:hover,
+.social-icons i:focus {
+  color: #3b906c;
+}

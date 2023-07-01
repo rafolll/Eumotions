@@ -1,0 +1,420 @@
+/***********ESTILOS DE GOOGLE FONTS: POPPINS***********/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/*Globales*/
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins"; /***FUENTE POPPINS EN  TODA EL BODY***/
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-image: url(../imgs/FONDO.png);
+  background-size: cover;
+}
+h1 {
+  font-family: "Cinzel", serif;
+  font-size: 50px;
+  text-align: center;
+  color: #000000;
+}
+
+h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+  color: #003105;
+}
+.icon-cart {
+  width: 40px;
+  height: 40px;
+  stroke: black;
+}
+
+.icon-cart:hover {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+/************************ESTILOS PARA HEADER***************************************/
+header {
+  position: relative;
+  top: 0; /**PARA MANTENER LA POSICIÓN ARRIBA**/
+  left: 0; /**PARA MANTENER LA POSICIÓN A LA IZQUIERDA**/
+  right: 0; /**PARA MANTENER LA POSICIÓN A LA DERECHA**/
+  background-color: rgba(11, 166, 142, 0.6);
+  padding: 0px 10%; /**0px ARRIBA Y ABAJO Y 10% IZQ-DERECHA**/
+  display: flex; /****COLOCAR UN ELEMENTO A LADO DE OTRO*****/
+  align-items: center; /********CENTRAR LOS ELEMENTOS*******/
+  justify-content: space-between; /**SEPARAR LOS ELEMENTOS EN EL INTERIOR**/
+  z-index: 1000; /**POSICIONAR EL MENU DELANTE DE CUALQUIER ELEMENTO**/
+}
+
+.header .navigation ul li {
+  float: left; /**LOS ELEMENTOS FLOTAN ALA IZQUIERDA DE SU CONENEDOR**/
+  position: relative;
+}
+
+.header .navigation ul li a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none; /**QUITA EL SUBRAYADO DE LOS MENUS**/
+  padding: 20px;
+  display: block;
+  transition: all 0.2s ease; /**ANIMACIÓN DE TRANSICIÓN DE 2 SG**/
+}
+
+.header .navigation ul li ul {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  background-color: rgba(11, 166, 142, 0.6);
+  display: none; /**NO DESPLEGAR LA BARRA DE MENU**/
+}
+
+.header .navigation ul li ul li a {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul {
+  position: absolute;
+  top: 0;
+  right: 300px;
+}
+
+.header .navigation ul li ul li {
+  width: 100%;
+}
+
+.header .navigation ul li:hover > ul {
+  display: initial;
+}
+
+#toggle,
+.header label {
+  display: none;
+  cursor: pointer;
+}
+
+.header .navigation ul li a:hover {
+  background-color: #00425a; /**DAR FONDO DE COLOR CADA VEZ QUE EL MOUSE LO SELECCIONE**/
+}
+
+/************************ESTILOS PARA EL MENU TOGGLE***************************************/
+.menu {
+  width: 45px;
+  height: 35px;
+}
+
+/************************ESTILOS PARA EL LOGO***************************************/
+.logo img {
+  margin-top: 5px;
+  height: 68px;
+  border-radius: 10%;
+}
+
+/************************ESTILOS PARA LA BARRA DE NAVEGACIÓN************************/
+.navigation ul {
+  list-style: none; /***QUITA LAS VIÑETAS DE LAS LISTAS***/
+}
+
+/*****************************MEDIA QUERY PARA RESPONSIVE***************************/
+@media (max-width: 1000px) {
+  .header label {
+    display: initial;
+  }
+
+  .header {
+    padding: 20px 10%;
+  }
+
+  .header .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(11, 166, 142, 0.6);
+    display: none;
+  }
+
+  .header .navigation ul li {
+    width: 100%;
+  }
+
+  .header .navigation ul li a {
+    padding: 8px 30px 8px 10%;
+  }
+
+  .header .navigation ul li ul {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+
+  .header .navigation ul li ul li {
+    background-color: rgba(11, 166, 142, 0.6);
+  }
+
+  .header .navigation ul li ul li ul {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+  #toggle:checked ~ .navigation {
+    display: block;
+  }
+}
+
+/*ICONO CARRITO DE COMPRA*/
+
+.container-icon {
+  position: relative;
+  display: flex;
+  float: right;
+  bottom: 50px;
+}
+
+.count-products {
+  position: absolute;
+  top: 55%;
+  right: 0;
+
+  background-color: black;
+  color: white;
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+#contador-productos {
+  font-size: 12px;
+}
+
+.container-cart-products {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  width: 400px;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.info-cart-product {
+  display: flex;
+  justify-content: space-between;
+  flex: 0.8;
+}
+
+.titulo-producto-carrito {
+  font-size: 20px;
+}
+
+.precio-producto-carrito {
+  font-weight: 700;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.cantidad-producto-carrito {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.icon-close {
+  width: 25px;
+  height: 25px;
+}
+
+.icon-close:hover {
+  stroke: red;
+  cursor: pointer;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.cart-total h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.total-pagar {
+  font-size: 20px;
+  font-weight: 900px;
+}
+
+.hidden-cart {
+  display: none;
+}
+
+/*Main*/
+
+.container-items-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.container-items-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.container-items-3 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  border-radius: 10px;
+}
+
+.item:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transition: all.5s;
+}
+
+.item figure {
+  overflow: hidden;
+}
+
+.item:hover img {
+  transform: scale(1.2);
+}
+
+.info-product {
+  padding: 15px 30px;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.info-product button {
+  border: none;
+  border-radius: 10px;
+  background: none;
+  background-color: rgb(219, 174, 51);
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.cart-empty {
+  padding: 20px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/*SEction*/
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Consulta de medios para tamaños de pantalla de hasta 768px */
+@media (max-width: 768px) {
+  .container-1 {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .container-1 input#search {
+    width: 200px;
+  }
+
+  .container-1 .icon {
+    right: 5px;
+  }
+}
+
+/*///////////////////////////////////////////////////////////////////////
+////////////////////////////////////FOOTER///////////////////////////////
+///////////////////////////////////////////////////////////////////////*/
+
+footer {
+  padding: 1rem;
+  background-color: white;
+  color: #3b906c;
+  text-align: center;
+  position: relative;
+}
+
+.footer-content h4 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.social-icons {
+  list-style: none;
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.social-icons i {
+  font-size: 2rem;
+  color: #3b906c;
+  padding: 0.5rem;
+}
+
+.social-icons i:hover,
+.social-icons i:focus {
+  color: #3b906c;
+}

@@ -1,0 +1,305 @@
+/***********ESTILOS DE GOOGLE FONTS: POPPINS***********/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/*Globales*/
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins"; /***FUENTE POPPINS EN  TODA EL BODY***/
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-image: url("../img/fondo_nosotros.jpg");
+  background-size: cover; 
+}
+h1{
+  font-family: 'Cinzel', serif;
+  font-size: 50px;
+  text-align: center;
+  color: #000000;
+}
+
+h2{
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  color: #003105;
+}
+.icon-cart {
+  width: 40px;
+  height: 40px;
+  stroke: black;
+}
+
+.icon-cart:hover {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+/************************ESTILOS PARA HEADER***************************************/
+header {
+  position: relative;
+  top: 0; /**PARA MANTENER LA POSICIÓN ARRIBA**/
+  left: 0; /**PARA MANTENER LA POSICIÓN A LA IZQUIERDA**/
+  right: 0; /**PARA MANTENER LA POSICIÓN A LA DERECHA**/
+  background-color: rgba(11, 166, 142, 0.6);
+  padding: 0px 10%; /**0px ARRIBA Y ABAJO Y 10% IZQ-DERECHA**/
+  display: flex; /****COLOCAR UN ELEMENTO A LADO DE OTRO*****/
+  align-items: center; /********CENTRAR LOS ELEMENTOS*******/
+  justify-content: space-between; /**SEPARAR LOS ELEMENTOS EN EL INTERIOR**/
+  z-index: 1000; /**POSICIONAR EL MENU DELANTE DE CUALQUIER ELEMENTO**/
+}
+
+.header .navigation ul li {
+  float: left; /**LOS ELEMENTOS FLOTAN ALA IZQUIERDA DE SU CONENEDOR**/
+  position: relative;
+}
+
+.header .navigation ul li a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none; /**QUITA EL SUBRAYADO DE LOS MENUS**/
+  padding: 20px;
+  display: block;
+  transition: all 0.2s ease; /**ANIMACIÓN DE TRANSICIÓN DE 2 SG**/
+}
+
+.header .navigation ul li ul {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  background-color: rgba(11, 166, 142, 0.6);
+  display: none; /**NO DESPLEGAR LA BARRA DE MENU**/
+}
+
+.header .navigation ul li ul li a {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul {
+  position: absolute;
+  top: 0;
+  right: 300px;
+}
+
+.header .navigation ul li ul li {
+  width: 100%;
+}
+
+.header .navigation ul li:hover > ul {
+  display: initial;
+}
+
+#toggle,
+.header label {
+  display: none;
+  cursor: pointer;
+}
+
+.header .navigation ul li a:hover {
+  background-color: #00425a; /**DAR FONDO DE COLOR CADA VEZ QUE EL MOUSE LO SELECCIONE**/
+}
+
+/************************ESTILOS PARA EL MENU TOGGLE***************************************/
+.menu {
+  width: 45px;
+  height: 35px;
+}
+
+/************************ESTILOS PARA EL LOGO***************************************/
+.logo img {
+  margin-top: 5px;
+  height: 68px;
+  border-radius: 10%;
+}
+
+/************************ESTILOS PARA LA BARRA DE NAVEGACIÓN************************/
+.navigation ul {
+  list-style: none; /***QUITA LAS VIÑETAS DE LAS LISTAS***/
+}
+
+/*****************************MEDIA QUERY PARA RESPONSIVE***************************/
+@media (max-width: 1000px) {
+  .header label {
+    display: initial;
+  }
+
+  .header {
+    padding: 20px 10%;
+  }
+
+  .header .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(11, 166, 142, 0.6);
+    display: none;
+  }
+
+  .header .navigation ul li {
+    width: 100%;
+  }
+
+  .header .navigation ul li a {
+    padding: 8px 30px 8px 10%;
+  }
+
+  .header .navigation ul li ul {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+
+  .header .navigation ul li ul li {
+    background-color: rgba(11, 166, 142, 0.6);
+  }
+
+  .header .navigation ul li ul li ul {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+  #toggle:checked ~ .navigation {
+    display: block;
+  }
+}
+
+
+
+/*nosotros*/
+.container{
+    margin: auto;
+}
+
+.section_2{
+  
+width: 75%;
+margin: auto;
+padding-top: 75px;
+}
+
+.section_2-tittle{
+font-family: 'roboto',sans-serif;
+font-size: 40px;
+color: #3b906c;
+font-weight:  bold;
+margin: 25px 0;
+
+}
+
+.us{
+display: flex;
+}
+.us-text{
+width: 60%;
+padding: 0 10% 0 0;
+}
+.us-paragraph{
+  font-family: 'roboto',sans-serif;
+  font-size: 18px;
+  color: #3b906c;
+  text-align: justify;
+  padding-top: 140px;
+
+}
+
+.paragraph-text{
+margin: 10px 0;
+
+}
+
+.us-rs{
+margin: 20px 0;
+}
+.us-rs-tittle{
+  font-family: 'roboto',sans-serif;
+  font-size: 20px;
+  color: #3b906c;
+  font-weight:  bold;
+  margin: 30px 0;
+}
+.rs-icon{
+margin: 20px 0;
+
+
+}
+.rs-link{
+margin: 0 10px;
+
+}
+.us-img{
+width: 50%;
+}
+.img-img{
+object-fit: cover;
+width: 100%;
+border-radius: 25px;
+height: 80%;
+}
+
+.rs-link img{
+  width: 36px;
+  height: 36px;
+  
+}
+
+
+
+/*///////////////////////////////////////////////////////////////////////
+////////////////////////////////////FOOTER///////////////////////////////
+///////////////////////////////////////////////////////////////////////*/
+
+footer {
+  padding: 1rem;
+  background-color: white;
+  color: #3b906c;
+  text-align: center;
+  position: relative;
+}
+
+.footer-content h4 {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.social-icons {
+  list-style: none;
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 1rem;
+}
+
+.social-icons i {
+  font-size: 2rem;
+  color: #3b906c;
+  padding: 0.5rem;
+}
+
+.social-icons i:hover,
+.social-icons i:focus {
+  color: #3b906c;
+}
+
+  
+
+
+  
